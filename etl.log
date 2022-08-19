@@ -61,3 +61,50 @@
 04:27:09 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
 04:27:11 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 200 511527
 04:27:12 PM: INFO [dataextract.py:47] Archivo Biblioteca ya esta en el directorio
+08:57:21 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+08:57:23 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv%20 HTTP/1.1" 200 304431
+08:57:23 PM: INFO [dataextract.py:18] Archivo de Museo ya esta en el directorio
+08:57:23 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+08:57:25 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv%20 HTTP/1.1" 200 96427
+08:57:25 PM: INFO [dataextract.py:33] Archivo Cine ya esta en el directorio
+08:57:25 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+08:57:27 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 200 None
+08:57:27 PM: INFO [dataextract.py:47] Archivo Biblioteca ya esta en el directorio
+09:00:22 PM: INFO [dataextract.py:54] ETL en proceso
+09:00:22 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+09:00:24 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv%20 HTTP/1.1" 200 304431
+09:00:25 PM: INFO [dataextract.py:21] Archivo de Museo ya esta en el directorio
+09:00:25 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+09:00:26 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv%20 HTTP/1.1" 200 96427
+09:00:26 PM: INFO [dataextract.py:35] Archivo Cine ya esta en el directorio
+09:00:26 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+09:00:28 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 200 511527
+09:00:28 PM: INFO [dataextract.py:48] Archivo Biblioteca ya esta en el directorio
+09:15:41 PM: INFO [dataclean.py:73] Transformación de datos en proceso
+09:16:43 PM: INFO [dataclean.py:73] Transformación de datos en proceso
+09:17:03 PM: INFO [dataclean.py:73] Transformación de datos en proceso
+09:24:53 PM: INFO [dataclean.py:70] Transformación de datos en proceso
+09:25:00 PM: INFO [dataclean.py:70] Transformación de datos en proceso
+09:25:51 PM: INFO [dataclean.py:71] Transformación de datos en proceso
+09:27:39 PM: INFO [dataclean.py:75] Transformación de datos en proceso
+09:27:39 PM: INFO [dataclean.py:11] Extrayendo categorías de  museo
+09:27:39 PM: INFO [dataclean.py:29] Extrayendo categorías de  Cine
+09:27:39 PM: INFO [dataclean.py:48] Extrayendo categorías de bibliotecas
+09:27:39 PM: INFO [dataclean.py:66] Concatenando tablas de cine,museo y biblioteca
+09:28:29 PM: INFO [dataclean.py:75] Transformación de datos en proceso
+09:28:29 PM: INFO [dataclean.py:11] Extrayendo categorías de  Museo
+09:28:29 PM: INFO [dataclean.py:29] Extrayendo categorías de  Cine
+09:28:29 PM: INFO [dataclean.py:48] Extrayendo categorías de bibliotecas
+09:28:29 PM: INFO [dataclean.py:66] Concatenando tablas de cine,museo y biblioteca
+09:29:05 PM: INFO [dataclean.py:75] Transformación de datos en proceso
+09:29:05 PM: INFO [dataclean.py:11] Extrayendo categorías de  Museo
+09:29:05 PM: INFO [dataclean.py:29] Extrayendo categorías de  Cine
+09:29:05 PM: INFO [dataclean.py:48] Extrayendo categorías de bibliotecas
+09:29:05 PM: INFO [dataclean.py:66] Concatenando tablas......
+09:29:06 PM: INFO [dataclean.py:72] Finalizado
+09:35:33 PM: INFO [dataclean.py:80] Transformación de datos en proceso
+09:35:33 PM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+09:35:33 PM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+09:35:33 PM: INFO [dataclean.py:51] Extrayendo categorías de bibliotecas
+09:35:33 PM: INFO [dataclean.py:70] Concatenando tablas......
+09:35:33 PM: INFO [dataclean.py:76] Finalizado
