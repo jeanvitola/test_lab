@@ -2,6 +2,9 @@
 from sqlalchemy import create_engine
 import pandas as pd 
 import psycopg2
+from dataclean import conjunto 
+import datetime
+
 
 # DEFINE THE DATABASE CREDENTIALS
 
@@ -22,17 +25,26 @@ def get_connection():
     except Exception as ex:
         print("Connection could not be made due to the following error: \n", ex)
 
+def  tablaPrincipal():
+    tabla_principal=pd.concat(conjunto)
+    tabla_principal["id"]=tabla_principal.index 
+    tabla_principal.reset_index(drop=True, inplace=True)
+    tabla_principal.set_index("id", inplace=True)
+    tabla_principal["date"]=datetime.date.today().strftime("%Y-%m-%d")
+    print(tabla_principal.columns)
 
-def TablaPrincipal():
-   
+    try:
+        tabla_principal.to_sql('tabla_principal', url, if_exists='replace')
 
-
-
+    except:
+        print("no se subió a la BBDD")
 
 
 
 if __name__ == '__main__':
     get_connection()
+    tablaPrincipal()
+    
   
     
 
