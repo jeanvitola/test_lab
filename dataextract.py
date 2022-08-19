@@ -1,7 +1,7 @@
 import requests
 import os
 import errno
-
+from logg import log
 
 class Alkemy:
 
@@ -13,11 +13,12 @@ class Alkemy:
             data=requests.get("https://datos.cultura.gob.ar/dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv ", allow_redirects = True)
             os.makedirs('museos/2022-julio')
             open('museos/2022-julio/museos-24-07-2022.csv', 'wb').write(data.content)
-            log.INFO('Archivo de Museo obtenido con éxito')
+            log.info('Archivo de Museo obtenido con éxito')
         except OSError as e:
+            log.info('Archivo de Museo ya esta en el directorio')
             if e.errno != errno.EEXIST:
                 raise
-            log.INFO('El archivo de Museo ya existe')
+            
             
    
 
@@ -27,12 +28,12 @@ class Alkemy:
             data=requests.get("https://datos.cultura.gob.ar/dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv ", allow_redirects = True)
             os.makedirs('cines/2022-julio')
             open('cines/2022-julio/cines-24-07-2022.csv', 'wb').write(data.content)
-            log.INFO('Archivo cine obtenido con éxito')
-
+            log.info('Archivo Cine obtenido con éxito')
         except OSError as e:
+            log.info('Archivo Cine ya esta en el directorio')
             if e.errno != errno.EEXIST:
                 raise
-            log.INFO('El archivo Cine ya existe')
+            
             
         
 
@@ -43,9 +44,11 @@ class Alkemy:
             open('bibliotecas/2022-julio/bibliotecas-24-07-2022.csv', 'wb').write(data.content)
             log.INFO('Archivo Biblioteca obtenido con éxito')
         except OSError as e:
+            log.info('Archivo Biblioteca ya esta en el directorio')
             if e.errno != errno.EEXIST:
                 raise
-            log.INFO('El archivo Biblioteca ya existe')
+            
+        
             
         
 
