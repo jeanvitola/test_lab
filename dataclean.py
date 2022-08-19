@@ -58,7 +58,7 @@ def extract_bibliotecas():
 def  concat_data():
     tabla_principal=pd.concat(conjunto)
     try:
-        tabla_principal.to_csv("tabla_principal.csv", index=False)
+        tabla_principal.to_csv("tabla_principal2.csv", index=False)
     except:
         print("El archivo ya existe")
 
