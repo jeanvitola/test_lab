@@ -33,7 +33,7 @@
 -url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
 ```
 *Hay que estipular las credenciales de acceso a la base de datos de nuestra ETL que estan en nuestro archivo `datalake.py`*
-
+*`datalake.py` tiene unas credenciales que se pueden utilizar para  verificar las funcionalidades del código*
 - #### 4) ejecutar :snake:
  *Para correr el programa ETL, que en terminos sencillo extrae la información a tráves de una petición GET, procesa la información  hacineod una limpieza y ifltrando seguún los requerimientos y los sube a una base de datos determinadas, simplemente nos pocicionamos en la carpeta de los archivos y ejecutamos el archivo padre  `main.py`.*
 
