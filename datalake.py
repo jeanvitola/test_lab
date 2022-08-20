@@ -1,4 +1,4 @@
-# IMPORT THE SQALCHEMY LIBRARY's CREATE_ENGINE METHOD
+# IMPORTAMOS EL SQALCHEMY LIBRARY's PARA CREAR EL CREATE_ENGINE 
 from sqlalchemy import create_engine
 import pandas as pd 
 import psycopg2
@@ -6,7 +6,7 @@ from dataclean import datalake, datacine
 import datetime
 from logg import log
 
-# DEFINE THE DATABASE CREDENTIALS
+#DEFINIMOS LA CREDENCIAL DE LA BASE DE DATOS
 
 
 user = 'akatmacqmmxvep'
@@ -16,101 +16,105 @@ port = 5432
 database = 'd6mc73d6s2s5oc'
 url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
 
-def get_connection():
-    log.info('Iniciando la conexión a la base de datos')
-    try: 
-        url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
-        conn = psycopg2.connect(url)
-        conn.autocommit = True
-        print(f"Connection to the {host} for user {user} created successfully.")
-    except Exception as ex:
-        print("Connection could not be made due to the following error: \n", ex)
+class databasePostgresql:
 
-def  tablaPrincipal():
-    tabla=pd.concat(datalake)
-    tabla_principal=tabla
-    tabla_principal["id"]=tabla_principal.index 
-    tabla_principal.reset_index(drop=True, inplace=True)
-    tabla_principal.set_index("id", inplace=True)
-    tabla_principal["date"]=datetime.date.today().strftime("%Y-%m-%d")
+    """Esta clase se encarga de  iniciar la conexión a la base de datos determinada por el usuario, luego del autenticación procede a crear y subir las tablas de acuerdo
+    a los requisitos estipulados  en el archivo """
+
+
+    def get_connection():
+        log.info('Iniciando la conexión a la base de datos')
+        try: 
+            url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
+            conn = psycopg2.connect(url)
+            conn.autocommit = True
+            print(f"La conexión al {host}  con el  {user}  ha iniciado.")
+        except Exception as ex:
+            print("La conexión a la base de datos ha presentado un error: \n", ex)
+
+    def  tablaPrincipal():
+        tabla=pd.concat(datalake)
+        tabla_principal=tabla
+        tabla_principal["id"]=tabla_principal.index 
+        tabla_principal.reset_index(drop=True, inplace=True)
+        tabla_principal.set_index("id", inplace=True)
+        tabla_principal["date"]=datetime.date.today().strftime("%Y-%m-%d")
+        
+
+        try:
+            tabla_principal.to_sql('tabla_principal', url, if_exists='replace')
+            log.info('TablaPrincipal se ha cargado')
+
+        except:
+            print("no se subió a la BBDD")
+
+        #----------> TABLA DE CATEGORÍA Y CANTIDAD<------------------------ 
+
+        categ_cant= tabla.groupby('categoria', as_index=False).size()
+        categ_cant=categ_cant.rename(columns={'size':'cantidad'})
+        categ_cant["date"]=datetime.date.today().strftime("%Y-%m-%d")
+        categ_cant
+        try:
+            categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
+            log.info('tablaCategoria se ha cargado')
+
+
+        except:
+            print("no se subió tablaCategoria a la BBDD")
+
+
+        #---------> TABLA DE CANTIDAD POR FUENTES <---------------------------
     
+        fuente=list()
+        for name, df in tabla.items():
+            fuente.append({'fuente':name,'cantidad':df.size,})
 
-    try:
-        tabla_principal.to_sql('tabla_principal', url, if_exists='replace')
-        log.info('TablaPrincipal se ha cargado')
+        tabla_fuente=pd.DataFrame(fuente)
+        tabla_fuente["date"]=datetime.date.today().strftime("%Y-%m-%d")
+        tabla_fuente
 
-    except:
-        print("no se subió a la BBDD")
-
-    #----------> TABLA DE CATEGORÍA Y CANTIDAD<------------------------ 
-
-    categ_cant= tabla.groupby('categoria', as_index=False).size()
-    categ_cant=categ_cant.rename(columns={'size':'cantidad'})
-    categ_cant["date"]=datetime.date.today().strftime("%Y-%m-%d")
-    categ_cant
-    try:
-        categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
-        log.info('tablaCategoria se ha cargado')
+        try:
+            tabla_fuente.to_sql('tablaFuente', url, if_exists='replace')
+            log.info('TablaFuente se ha cargado')
 
 
-    except:
-        print("no se subió tablaCategoria a la BBDD")
+        except:
+            print("no se subió tablaFuente a la BBDD")
 
-
-    #---------> TABLA DE CANTIDAD POR FUENTES <---------------------------
- 
-    fuente=list()
-    for name, df in tabla.items():
-        fuente.append({'fuente':name,'cantidad':df.size,})
-
-    tabla_fuente=pd.DataFrame(fuente)
-    tabla_fuente["date"]=datetime.date.today().strftime("%Y-%m-%d")
-    tabla_fuente
-
-    try:
-        tabla_fuente.to_sql('tablaFuente', url, if_exists='replace')
-        log.info('TablaFuente se ha cargado')
-
-
-    except:
-        print("no se subió tablaFuente a la BBDD")
-
- #-------------------> TABLA PROVINCIA, CANTIDAD, FUENTE   <---------------------
-  
-    provi_cant=tabla.groupby(['categoria','provincia'], as_index=False).size()
-    provi_cant=provi_cant.rename(columns={'size':'cantidad'})
-    provi_cant["date"]=datetime.date.today().strftime("%Y-%m-%d")
-    provi_cant
-
-    try:
-        provi_cant.to_sql('tablaProvincia', url, if_exists='replace')
-        log.info('TablaProviancia se ha cargado')
-
-
-    except:
-        print("no se subió tablaProvincia la BBDD")
-
-
-#-------------------> TABLA CINE <-----------------------------------
-    df_cines_data=pd.concat(datacine)
-    df_cines_data=df_cines_data[['Provincia', 'Pantallas', 'Butacas', 'espacio_INCAA']]
-    df_cines_data.dtypes
-    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].replace('SI', 'si').replace('si', 1)
-    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].fillna(0)
-    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].astype("int")
-    tabla_cine= df_cines_data.groupby('Provincia').sum()
-    tabla_cine["date"]=datetime.date.today().strftime("%Y-%m-%d")
-    tabla_cine
-    try:
-        tabla_cine.to_sql('tablaCine', url, if_exists='replace')
-        log.info('TablaCine se ha cargado')
-
-    except:
-        print("no se subió TablaCine la BBDD")
-
-
-
-get_connection()
-tablaPrincipal()
-
+    #-------------------> TABLA PROVINCIA, CANTIDAD, FUENTE   <---------------------
     
+        provi_cant=tabla.groupby(['categoria','provincia'], as_index=False).size()
+        provi_cant=provi_cant.rename(columns={'size':'cantidad'})
+        provi_cant["date"]=datetime.date.today().strftime("%Y-%m-%d")
+        provi_cant
+
+        try:
+            provi_cant.to_sql('tablaProvincia', url, if_exists='replace')
+            log.info('tablaProvincia se ha cargado')
+
+
+        except:
+            print("no se subió tablaProvincia la BBDD")
+
+
+    #-------------------> TABLA CINE <-----------------------------------
+        df_cines_data=pd.concat(datacine)
+        df_cines_data=df_cines_data[['Provincia', 'Pantallas', 'Butacas', 'espacio_INCAA']]
+        df_cines_data.dtypes
+        df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].replace('SI', 'si').replace('si', 1)
+        df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].fillna(0)
+        df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].astype("int")
+        tabla_cine= df_cines_data.groupby('Provincia').sum()
+        tabla_cine["date"]=datetime.date.today().strftime("%Y-%m-%d")
+        tabla_cine
+        try:
+            tabla_cine.to_sql('tablaCine', url, if_exists='replace')
+            log.info('TablaCine se ha cargado')
+
+        except:
+            print("no se subió TablaCine la BBDD")
+
+
+dp=databasePostgresql
+dp.get_connection()
+dp.tablaPrincipal()

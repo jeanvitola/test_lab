@@ -66,12 +66,7 @@ class data_clean:
         df_transform.insert(11, 'web', data['Web'])
         datalake.append(df_transform)
 
-    def concat_data():
-        tabla_principal = pd.concat(datalake)
-        try:
-            tabla_principal.to_csv("tabla_principal.csv", index=False)
-        except:
-            log.info('El archivo de tabla_principal ya existe')
+
 
 
 log.info('Transformación de datos en proceso')
@@ -79,5 +74,4 @@ dc = data_clean
 dc.extract_museo()
 dc.extract_cine()
 dc.extract_bibliotecas()
-dc.concat_data()
 log.info('Extración y limpieza de datos terminada')
