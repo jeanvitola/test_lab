@@ -1,6 +1,3 @@
-# CREDENCIALES  DE BASES DE DATOS
-
-
 
 # EXTRACT
 try:
