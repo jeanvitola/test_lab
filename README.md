@@ -21,7 +21,7 @@
 
    *En el archivo requirements.txt encontramos todas las librerías utilizadas para el funcionamiento
    del proyecto*
-  - `pip -r install requirements.txt`
+  - `pip install -r requirements.txt`
 
 - #### 3) Configurar conexión a la base de datos en el archivo datalake.py
  ```

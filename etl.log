@@ -1042,3 +1042,55 @@
 09:00:07 PM: INFO [<string>:76] TablaFuente se ha cargado
 09:00:10 PM: INFO [<string>:91] tablaProvincia se ha cargado
 09:00:13 PM: INFO [<string>:110] TablaCine se ha cargado
+10:23:40 PM: INFO [<string>:54] Extracción de datos en proceso
+10:23:40 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:23:40 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv%20 HTTP/1.1" 403 None
+10:23:40 PM: INFO [<string>:21] Archivo de Museo ya esta en el directorio
+10:23:40 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:23:40 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv%20 HTTP/1.1" 403 None
+10:23:40 PM: INFO [<string>:35] Archivo Cine ya esta en el directorio
+10:23:40 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:23:41 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 403 None
+10:23:41 PM: INFO [<string>:48] Archivo Biblioteca ya esta en el directorio
+10:23:41 PM: INFO [<string>:72] Transformación de datos en proceso
+10:23:41 PM: INFO [<string>:14] Extrayendo categorías de  Museo
+10:23:41 PM: INFO [<string>:32] Extrayendo categorías de  Cine
+10:23:41 PM: INFO [<string>:52] Extrayendo categorías de bibliotecas
+10:23:41 PM: INFO [<string>:77] Extración y limpieza de datos terminada
+10:23:41 PM: INFO [dataclean.py:72] Transformación de datos en proceso
+10:23:41 PM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+10:23:41 PM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+10:23:41 PM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+10:23:41 PM: INFO [dataclean.py:77] Extración y limpieza de datos terminada
+10:23:41 PM: INFO [<string>:25] Iniciando la conexión a la base de datos
+10:23:45 PM: INFO [<string>:45] TablaPrincipal se ha cargado
+10:23:48 PM: INFO [<string>:58] tablaCategoria se ha cargado
+10:23:52 PM: INFO [<string>:75] TablaFuente se ha cargado
+10:23:55 PM: INFO [<string>:90] tablaProvincia se ha cargado
+10:23:58 PM: INFO [<string>:111] TablaCine se ha cargado
+10:44:27 PM: INFO [<string>:54] Extracción de datos en proceso
+10:44:27 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:44:27 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv%20 HTTP/1.1" 403 None
+10:44:27 PM: INFO [<string>:21] Archivo de Museo ya esta en el directorio
+10:44:27 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:44:27 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv%20 HTTP/1.1" 403 None
+10:44:27 PM: INFO [<string>:35] Archivo Cine ya esta en el directorio
+10:44:27 PM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+10:44:27 PM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 403 None
+10:44:27 PM: INFO [<string>:48] Archivo Biblioteca ya esta en el directorio
+10:44:27 PM: INFO [<string>:72] Transformación de datos en proceso
+10:44:27 PM: INFO [<string>:14] Extrayendo categorías de  Museo
+10:44:27 PM: INFO [<string>:32] Extrayendo categorías de  Cine
+10:44:27 PM: INFO [<string>:52] Extrayendo categorías de bibliotecas
+10:44:27 PM: INFO [<string>:77] Extración y limpieza de datos terminada
+10:44:27 PM: INFO [dataclean.py:72] Transformación de datos en proceso
+10:44:27 PM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+10:44:27 PM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+10:44:27 PM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+10:44:27 PM: INFO [dataclean.py:77] Extración y limpieza de datos terminada
+10:44:27 PM: INFO [<string>:25] Iniciando la conexión a la base de datos
+10:44:31 PM: INFO [<string>:45] TablaPrincipal se ha cargado
+10:44:35 PM: INFO [<string>:58] tablaCategoria se ha cargado
+10:44:38 PM: INFO [<string>:75] TablaFuente se ha cargado
+10:44:41 PM: INFO [<string>:90] tablaProvincia se ha cargado
+10:44:44 PM: INFO [<string>:111] TablaCine se ha cargado
