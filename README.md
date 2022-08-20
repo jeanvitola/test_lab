@@ -38,7 +38,7 @@
  *Para correr el programa ETL, que en terminos sencillo extrae la información a tráves de una petición GET, procesa la información  hacineod una limpieza y ifltrando seguún los requerimientos y los sube a una base de datos determinadas, simplemente nos pocicionamos en la carpeta de los archivos y ejecutamos el archivo padre  `main.py`.*
 
 - `python main.py`
-- ![image](https://user-images.githubusercontent.com/75003188/185765331-c03a625d-631b-4839-bef0-9552654d0470.png)
+![image](https://user-images.githubusercontent.com/75003188/185765331-c03a625d-631b-4839-bef0-9552654d0470.png)
 
 - #### 5) Archivos :computer:
 - `dataextract.py` : *Acá encontramos la extracción de datos de la página fuente y los guarda en en sistema con el nombre asignado*
@@ -47,7 +47,7 @@
 - `logg.py`     : *Acá se arma el Log el cual será el archvio del sistema de eventos, para eso crea un  etl.log*
 
 
-- #### 5) Imágenes :computer:
+- #### 6) Imágenes :computer:
 ![image](https://user-images.githubusercontent.com/75003188/185765700-906d8630-9c04-41fe-8e58-ef35c01740ef.png)
 ![image](https://user-images.githubusercontent.com/75003188/185765715-ee3714bf-da05-4425-afd8-e6bd11ccd831.png)
 
