@@ -64,12 +64,12 @@ def  tablaPrincipal():
     tabla_fuente
 
     try:
-        tabla_fuente.to_sql('tablaCategoria', url, if_exists='replace')
+        tabla_fuente.to_sql('tablaFuente', url, if_exists='replace')
 
     except:
         print("no se subió a la BBDD")
 
-  #Tabla de cantidad, proviencia y fuente
+ #-------------------> TABLA PROVINCIA, CANTIDAD, FUENTE   <---------------------
   
     provi_cant=tabla.groupby(['categoria','provincia'], as_index=False).size()
     provi_cant=provi_cant.rename(columns={'size':'cantidad'})
@@ -77,7 +77,7 @@ def  tablaPrincipal():
     provi_cant
 
     try:
-        provi_cant.to_sql('tablaCategoria', url, if_exists='replace')
+        provi_cant.to_sql('tablaProvincia', url, if_exists='replace')
 
     except:
         print("no se subió a la BBDD")

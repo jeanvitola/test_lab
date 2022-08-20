@@ -447,3 +447,7 @@
 03:46:06 AM: INFO [dataclean.py:15] Extrayendo categorías de  Museo
 03:46:06 AM: INFO [dataclean.py:33] Extrayendo categorías de  Cine
 03:46:06 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+03:49:33 AM: INFO [dataclean.py:78] Transformación de datos en proceso
+03:49:33 AM: INFO [dataclean.py:15] Extrayendo categorías de  Museo
+03:49:33 AM: INFO [dataclean.py:33] Extrayendo categorías de  Cine
+03:49:33 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
