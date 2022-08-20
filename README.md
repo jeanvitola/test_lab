@@ -1,5 +1,11 @@
 # Alkemy Reto de Data Analyst + Python  @jeanvitola
 
+![image](https://user-images.githubusercontent.com/75003188/185768784-d7279246-4f75-43c4-afec-bd50759418a1.png)
+
+
+
+
+
 ## Deploy :factory:
 
 ## ¿ Comó ejecuto el ETL? :question:
