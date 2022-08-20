@@ -460,3 +460,97 @@
 03:59:59 AM: INFO [dataclean.py:15] Extrayendo categorías de  Museo
 03:59:59 AM: INFO [dataclean.py:33] Extrayendo categorías de  Cine
 03:59:59 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:08:58 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:08:58 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:08:58 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:08:58 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:09:48 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:09:48 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:09:48 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:09:48 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:10:26 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:10:26 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:10:26 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:10:26 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:10:37 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:10:37 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:10:37 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:10:37 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:10:55 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:10:55 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:10:55 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:10:55 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:47:58 AM: INFO [dataextract.py:54] Extracción de datos en proceso
+04:47:58 AM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+04:47:58 AM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museos_datosabiertos.csv%20 HTTP/1.1" 403 None
+04:47:58 AM: INFO [dataextract.py:21] Archivo de Museo ya esta en el directorio
+04:47:58 AM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+04:47:58 AM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv%20 HTTP/1.1" 403 None
+04:47:58 AM: INFO [dataextract.py:35] Archivo Cine ya esta en el directorio
+04:47:58 AM: DEBUG [connectionpool.py:1003] Starting new HTTPS connection (1): datos.cultura.gob.ar:443
+04:47:58 AM: DEBUG [connectionpool.py:456] https://datos.cultura.gob.ar:443 "GET /dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv HTTP/1.1" 403 None
+04:47:58 AM: INFO [dataextract.py:48] Archivo Biblioteca ya esta en el directorio
+04:48:06 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:48:06 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:48:06 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:48:06 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:48:33 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:48:33 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:48:33 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:48:33 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:51:35 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:51:35 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:51:35 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:51:35 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:52:26 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:52:26 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:52:26 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:52:26 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:52:40 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:52:40 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:52:40 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:52:40 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:53:25 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:53:25 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:53:25 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:53:25 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:54:19 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:54:19 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:54:19 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:54:19 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:56:08 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:56:08 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:56:08 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:56:08 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:56:19 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:56:19 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:56:19 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:56:19 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+04:58:11 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+04:58:11 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+04:58:11 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+04:58:11 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:00:53 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:00:53 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:00:53 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:00:53 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:02:08 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:02:08 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:02:08 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:02:08 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:03:58 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:03:58 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:03:58 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:03:58 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:05:00 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:05:00 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:05:00 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:05:00 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:05:05 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:05:05 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:05:05 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:05:05 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas
+05:05:54 AM: INFO [dataclean.py:77] Transformación de datos en proceso
+05:05:54 AM: INFO [dataclean.py:14] Extrayendo categorías de  Museo
+05:05:54 AM: INFO [dataclean.py:32] Extrayendo categorías de  Cine
+05:05:55 AM: INFO [dataclean.py:52] Extrayendo categorías de bibliotecas

@@ -3,6 +3,7 @@ from logg import log
 
 
 datalake = []
+datacine=[]
 
 
 class data_clean:
@@ -45,6 +46,7 @@ class data_clean:
         df_transform.insert(10, 'mail', data['Mail'])
         df_transform.insert(11, 'web', data['Web'])
         datalake.append(df_transform)
+        datacine.append(data)
 
     def extract_bibliotecas():
         log.info('Extrayendo categorías de bibliotecas')

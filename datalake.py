@@ -2,7 +2,7 @@
 from sqlalchemy import create_engine
 import pandas as pd 
 import psycopg2
-from dataclean import datalake
+from dataclean import datalake, datacine
 import datetime
 
 
@@ -50,7 +50,7 @@ def  tablaPrincipal():
         categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
 
     except:
-        print("no se subió a la BBDD")
+        print("no se subió tablaCategoria a la BBDD")
 
 
     #---------> TABLA DE CANTIDAD POR FUENTES <---------------------------
@@ -67,7 +67,7 @@ def  tablaPrincipal():
         tabla_fuente.to_sql('tablaFuente', url, if_exists='replace')
 
     except:
-        print("no se subió a la BBDD")
+        print("no se subió tablaFuente a la BBDD")
 
  #-------------------> TABLA PROVINCIA, CANTIDAD, FUENTE   <---------------------
   
@@ -80,12 +80,11 @@ def  tablaPrincipal():
         provi_cant.to_sql('tablaProvincia', url, if_exists='replace')
 
     except:
-        print("no se subió a la BBDD")
-
+        print("no se subió tablaProvincia la BBDD")
 
    
 
-
 get_connection()
 tablaPrincipal()
+
     
