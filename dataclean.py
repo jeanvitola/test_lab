@@ -2,12 +2,10 @@ import pandas as pd
 from logg import log
 
 
-
 datalake = []
 
-class data_clean:
 
-    
+class data_clean:
 
     """Esta clase contiene las funciones donde se extraerán las categorías de interés de los tres principales archivos """
 
@@ -72,7 +70,6 @@ class data_clean:
             tabla_principal.to_csv("tabla_principal.csv", index=False)
         except:
             log.info('El archivo de tabla_principal ya existe')
-
 
 
 log.info('Transformación de datos en proceso')
