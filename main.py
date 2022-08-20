@@ -1,4 +1,6 @@
-# EXECTUTE ETLS
+# CREDENCIALES  DE BASES DE DATOS
+
+
 
 # EXTRACT
 try:
@@ -6,20 +8,20 @@ try:
 except:
   print("Ha ocurrido un error en dataextract")
 else:
-  print("Ejecución correcta de codigo01")
+  print("Ejecución correcta dataextract.py")
 
 # TRANSFORM
 try:
   exec(open("dataclean.py").read())
 except:
-  print("Ha ocurrido un error en codigo02")
+  print("Ha ocurrido un error  dataclean.py")
 else:
-  print("Ejecución correcta de codigo02")
+  print("Ejecución correcta dataclean.py")
 
 # LOAD
 try:
   exec(open("datalake.py").read())
 except:
-  print("Ha ocurrido un error en codigo03")
+  print("Ha ocurrido un error en  datalake.py")
 else:
-  print("Ejecución correcta de codigo03")
+  print("Ejecución correcta de datalake.py")
