@@ -2,13 +2,14 @@ import pandas as pd
 from logg import log
 
 
-datalake = []
-cine = pd.DataFrame
 
+datalake = []
 
 class data_clean:
+
+    
+
     """Esta clase contiene las funciones donde se extraerán las categorías de interés de los tres principales archivos """
-  
 
     def extract_museo():
         log.info('Extrayendo categorías de  Museo')
@@ -66,20 +67,17 @@ class data_clean:
         datalake.append(df_transform)
 
     def concat_data():
-        """Esta función concatena los datos almacenados en la varible "datalake """
-        log.info('Concatenando tablas......')
         tabla_principal = pd.concat(datalake)
         try:
             tabla_principal.to_csv("tabla_principal.csv", index=False)
         except:
             log.info('El archivo de tabla_principal ya existe')
-        log.info('Finalizado')
 
 
-if __name__ == "__main__":
-    log.info('Transformación de datos en proceso')
-    dc = data_clean
-    dc.extract_museo()
-    dc.extract_cine()
-    dc.extract_bibliotecas()
-    dc.concat_data()
+
+log.info('Transformación de datos en proceso')
+dc = data_clean
+dc.extract_museo()
+dc.extract_cine()
+dc.extract_bibliotecas()
+dc.concat_data()

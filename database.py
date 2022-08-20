@@ -1,15 +1,24 @@
-# Importamos la librerias para crear el Metodo ENGINE
-# IMPORT THE SQALCHEMY LIBRARY's CREATE_ENGINE METHOD
+# Importamos SQALCHEMY LIBRARY para  crear el Metodo ENGINE
 from sqlalchemy import create_engine
 import pandas as pd 
 import psycopg2
 from dataclean import datalake
 import datetime
+from logg import log
 
 #Definimos las credenciales de la Base de datos
-# DEFINE THE DATABASE CREDENTIALS
 
 class dataPostgresql:
+    """ En esta clase definimos las credenciales para conexión a  la base de datos utilizada que en este caso es PostgreSQL,
+        tambien se establece la carga de dataframe para la transformación de los mismos y luego subirlos a la base de datos de forma correcta.
+
+    Credenciales:
+    user = usuario para autenticarse en la BBDD
+    password =  contraseña para autenticarse en la BDD
+    host =  host de la BBDD 
+    port =  Puerto (5432 por defecto)
+    database = nombre de la base de datos
+    """
 
     user = 'uqmaap1pj5xxhla3libh'
     password = 'fwdCjWHIuTEsPOxTVe5z'
@@ -23,12 +32,12 @@ class dataPostgresql:
             url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
             conn = psycopg2.connect(url)
             conn.autocommit = True
-            print(f"Connection to the {host} for user {user} created successfully.")
+            log.info(f"La conexión al {host} con usuario {user} ha sido exitosa.")
         except Exception as ex:
-            print("Connection could not be made due to the following error: \n", ex)
+            log.info("La conexión ha presentado un error, por favor verificar", ex)
 
     def  tablaPrincipal():
-        tabla=pd.concat(conjunto)
+        tabla=pd.concat(datalake)
         tabla_principal=tabla
         tabla_principal["id"]=tabla_principal.index 
         tabla_principal.reset_index(drop=True, inplace=True)
@@ -48,14 +57,15 @@ class dataPostgresql:
         categ_cant["date"]=datetime.date.today().strftime("%Y-%m-%d")
         categ_cant
         try:
-            categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
+            categ_cant.to_sql('categoriaCantidad', url, if_exists='replace')
+            log.info('La carga de la tabla principal ha sido Extiosa')
 
-        except:
-            print("no se subió a la BBDD")
+        except Exception as e:
+            log.info('no se subió a la BBDD')
 
 
         # Tabla de cantidad por fuente
-    
+
         fuente=list()
         for name, df in tabla.items():
             fuente.append({'fuente':name,'cantidad':df.size,})
@@ -65,12 +75,13 @@ class dataPostgresql:
         tabla_fuente
 
         try:
-            categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
+            tabla_fuente.to_sql('CantidadFuente', url, if_exists='replace')
+            log.info('La carga de tabla_fuente se ha realizado')
 
         except:
             print("no se subió a la BBDD")
 
-    #Tabla de cantidad, proviencia y fuente
+        #Tabla de cantidad, proviencia y fuente
     
         provi_cant=tabla_principal.groupby(['categoria','provincia'], as_index=False).size()
         provi_cant=provi_cant.rename(columns={'size':'cantidad'})
@@ -78,18 +89,17 @@ class dataPostgresql:
         provi_cant
 
         try:
-            categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
+            provi_cant.to_sql('provinciFuente', url, if_exists='replace')
+            log.info('La carga de provi_cant se ha realizado')
 
         except:
             print("no se subió a la BBDD")
 
 
-
-
-
 if __name__ == '__main__':
-    get_connection()
-    tablaPrincipal()
+    dp=dataPostgresql
+    dp.get_connection()
+    dp.tablaPrincipal()
     
   
     
