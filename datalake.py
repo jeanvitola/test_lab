@@ -4,19 +4,20 @@ import pandas as pd
 import psycopg2
 from dataclean import datalake, datacine
 import datetime
-
+from logg import log
 
 # DEFINE THE DATABASE CREDENTIALS
 
 
-user = 'ukpkzzxlojkufjupphf4'
-password = '3szfJwiWmZ2rmHmxbxxq'
-host = 'bkoipdkx2waraakv4cc1-postgresql.services.clever-cloud.com'
+user = 'akatmacqmmxvep'
+password = 'ae6cd4a2cede9d432cce63140dc747190612cf0f88b46daa555f2b420babf213'
+host = 'ec2-44-206-137-96.compute-1.amazonaws.com'
 port = 5432
-database = 'bkoipdkx2waraakv4cc1'
+database = 'd6mc73d6s2s5oc'
 url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
 
 def get_connection():
+    log.info('Iniciando la conexión a la base de datos')
     try: 
         url="postgresql://{0}:{1}@{2}:{3}/{4}".format(user, password, host, port, database)
         conn = psycopg2.connect(url)
@@ -32,10 +33,11 @@ def  tablaPrincipal():
     tabla_principal.reset_index(drop=True, inplace=True)
     tabla_principal.set_index("id", inplace=True)
     tabla_principal["date"]=datetime.date.today().strftime("%Y-%m-%d")
-    print(tabla_principal.columns)
+    
 
     try:
         tabla_principal.to_sql('tabla_principal', url, if_exists='replace')
+        log.info('TablaPrincipal se ha cargado')
 
     except:
         print("no se subió a la BBDD")
@@ -48,6 +50,8 @@ def  tablaPrincipal():
     categ_cant
     try:
         categ_cant.to_sql('tablaCategoria', url, if_exists='replace')
+        log.info('tablaCategoria se ha cargado')
+
 
     except:
         print("no se subió tablaCategoria a la BBDD")
@@ -65,6 +69,8 @@ def  tablaPrincipal():
 
     try:
         tabla_fuente.to_sql('tablaFuente', url, if_exists='replace')
+        log.info('TablaFuente se ha cargado')
+
 
     except:
         print("no se subió tablaFuente a la BBDD")
@@ -78,11 +84,31 @@ def  tablaPrincipal():
 
     try:
         provi_cant.to_sql('tablaProvincia', url, if_exists='replace')
+        log.info('TablaProviancia se ha cargado')
+
 
     except:
         print("no se subió tablaProvincia la BBDD")
 
-   
+
+#-------------------> TABLA CINE <-----------------------------------
+    df_cines_data=pd.concat(datacine)
+    df_cines_data=df_cines_data[['Provincia', 'Pantallas', 'Butacas', 'espacio_INCAA']]
+    df_cines_data.dtypes
+    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].replace('SI', 'si').replace('si', 1)
+    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].fillna(0)
+    df_cines_data['espacio_INCAA'] = df_cines_data['espacio_INCAA'].astype("int")
+    tabla_cine= df_cines_data.groupby('Provincia').sum()
+    tabla_cine["date"]=datetime.date.today().strftime("%Y-%m-%d")
+    tabla_cine
+    try:
+        tabla_cine.to_sql('tablaCine', url, if_exists='replace')
+        log.info('TablaCine se ha cargado')
+
+    except:
+        print("no se subió TablaCine la BBDD")
+
+
 
 get_connection()
 tablaPrincipal()
